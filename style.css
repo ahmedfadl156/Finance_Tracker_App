@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+  font-family: "Roboto", sans-serif;
+}
+
+.income{
+  color: #088738;
+}
+
+.outcome{
+  color: red;
+}
+
+.active{
+  color: #4A739C;
+  border-bottom: 2px solid #4A739C;
+  transform: translateY(-5px);
+  transition: all 0.2s linear;
+}
+
