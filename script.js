@@ -127,8 +127,9 @@ function displayTransactions() {
                 <div class="tran-info flex flex-col gap-1">
                     <p class="transc-desc font-bold text-lg">${transc.description}</p>
                     <span class="transc-cash font-serif text-2xl ${amountClass}">${displayAmount}</span>
+                    <span class="transc-cash font-serif text-xl text-amber-300">Date: ${transc.date}</span>
                 </div>
-                <i class="fa-solid fa-trash-can text-xl text-gray-400 hover:text-red-600 cursor-pointer transition-colors" data-id="${transc.id}"></i>
+                <i class="fa-solid fa-trash-can text-[18px] text-gray-400 hover:text-red-600 cursor-pointer transition-colors" data-id="${transc.id}"></i>
             </li>
         `;
 
