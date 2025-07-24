@@ -1,4 +1,5 @@
 💰 Budget Planner: Your Personal Finance Tracker
+
 Welcome to the Budget Planner! This is a clean, intuitive web application designed to help you easily track your personal income and expenses, providing a clear overview of your financial health. Built with modern web technologies, it offers a seamless experience for managing your money.
 
 ✨ Features
