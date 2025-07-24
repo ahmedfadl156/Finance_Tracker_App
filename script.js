@@ -92,6 +92,7 @@ function loadTransactions() {
     }
     updateSummary();
     displayTransactions();
+    updateChart();
 }
 
 function saveTransactions() {
@@ -117,7 +118,7 @@ function addTransaction(description, amount, type) {
 function displayTransactions() {
     incomesListEl.innerHTML = '';
     expensesListEl.innerHTML = '';
-    
+
     transactions.forEach(transc => {
         const displayAmount = transc.type === 'expense' ? `-$${Math.abs(transc.amount).toFixed(2)}` : `$${transc.amount.toFixed(2)}`;
         const amountClass = transc.type === 'expense' ? 'text-red-600' : 'text-green-600'; 
@@ -127,9 +128,8 @@ function displayTransactions() {
                 <div class="tran-info flex flex-col gap-1">
                     <p class="transc-desc font-bold text-lg">${transc.description}</p>
                     <span class="transc-cash font-serif text-2xl ${amountClass}">${displayAmount}</span>
-                    <span class="transc-cash font-serif text-xl text-amber-300">Date: ${transc.date}</span>
                 </div>
-                <i class="fa-solid fa-trash-can text-[18px] text-gray-400 hover:text-red-600 cursor-pointer transition-colors" data-id="${transc.id}"></i>
+                <i class="fa-solid fa-trash-can text-xl text-gray-400 hover:text-red-600 cursor-pointer transition-colors" data-id="${transc.id}"></i>
             </li>
         `;
 
@@ -230,8 +230,13 @@ document.getElementById('transaction-history').addEventListener('click', e => {
 });
 
 window.addEventListener('DOMContentLoaded', () => {
+    initChart();
+    
     loadTransactions();
+    
     setTimeout(() => {
-        initChart();
-    }, 100);
+        if (myChart && transactions.length > 0) {
+            updateChart();
+        }
+    }, 200);
 });
